@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 /**
  * Navbar - Sticky header with responsive hamburger menu.
@@ -35,23 +36,26 @@ export default function Navbar() {
         {/* Desktop navigation - hidden on mobile */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <motion.a
               key={link.href}
               href={link.href}
               className="text-slate-600 hover:text-slate-900 transition-colors"
+              whileHover={{ y: -1 }}
+              whileTap={{ scale: 0.98 }}
             >
               {link.label}
-            </a>
+            </motion.a>
           ))}
         </div>
 
         {/* Hamburger button - visible on mobile only */}
-        <button
+        <motion.button
           type="button"
           aria-label="Toggle menu"
           aria-expanded={isMenuOpen}
           className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          whileTap={{ scale: 0.95 }}
         >
           <svg
             className="w-6 h-6"
@@ -76,7 +80,7 @@ export default function Navbar() {
               />
             )}
           </svg>
-        </button>
+        </motion.button>
       </div>
 
       {/* Mobile menu - slides down when open */}
