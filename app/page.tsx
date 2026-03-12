@@ -1,14 +1,49 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 
 /**
- * Home page - Landing page with Navbar and Hero section.
+ * Home page - Landing page with Hero and placeholder sections.
+ * Each section has an ID for smooth-scroll navigation.
  */
 export default function Home() {
   return (
     <main>
-      <Navbar />
       <Hero />
+      <section
+        id="about"
+        className="min-h-[50vh] flex items-center justify-center px-6 py-20 bg-white border-t border-slate-200"
+      >
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">About</h2>
+          <p className="text-slate-600">Content coming soon.</p>
+        </div>
+      </section>
+      <section
+        id="projects"
+        className="min-h-[50vh] flex items-center justify-center px-6 py-20 bg-slate-50"
+      >
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Projects</h2>
+          <p className="text-slate-600">Content coming soon.</p>
+        </div>
+      </section>
+      <section
+        id="skills"
+        className="min-h-[50vh] flex items-center justify-center px-6 py-20 bg-white border-t border-slate-200"
+      >
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Skills</h2>
+          <p className="text-slate-600">Content coming soon.</p>
+        </div>
+      </section>
+      <section
+        id="contact"
+        className="min-h-[50vh] flex items-center justify-center px-6 py-20 bg-slate-50"
+      >
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Contact</h2>
+          <p className="text-slate-600">Content coming soon.</p>
+        </div>
+      </section>
     </main>
   );
 }
