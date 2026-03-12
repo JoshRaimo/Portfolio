@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Project } from "@/data/projects";
 
 interface ProjectCardProps {
@@ -7,13 +8,16 @@ interface ProjectCardProps {
 
 /**
  * ProjectCard - Reusable card displaying a single project.
- * Shows title, description, technology badges, and GitHub link.
+ * Links to case study page; shows description, tech badges, and GitHub link.
  */
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="flex flex-col rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200">
-      {/* Project image */}
-      <div className="relative w-full aspect-video bg-slate-200">
+      {/* Project image - links to case study */}
+      <Link
+        href={`/projects/${project.slug}`}
+        className="relative block w-full aspect-video bg-slate-200"
+      >
         <Image
           src={project.image}
           alt={`${project.title} screenshot`}
@@ -21,13 +25,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-      </div>
+      </Link>
 
       <div className="flex flex-1 flex-col p-6">
-        {/* Title */}
-        <h3 className="text-xl font-bold text-slate-900 mb-2">
-          {project.title}
-        </h3>
+        {/* Title - links to case study */}
+        <Link href={`/projects/${project.slug}`}>
+          <h3 className="text-xl font-bold text-slate-900 mb-2 hover:text-slate-600 transition-colors">
+            {project.title}
+          </h3>
+        </Link>
 
         {/* Description */}
         <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
@@ -46,13 +52,20 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
 
-        {/* GitHub button */}
-        <a
-          href={project.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-700 transition-colors"
-        >
+        {/* Action buttons */}
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href={`/projects/${project.slug}`}
+            className="inline-flex items-center justify-center gap-2 px-4 py-2 border border-slate-900 text-slate-900 text-sm font-medium rounded-lg hover:bg-slate-900 hover:text-white transition-colors"
+          >
+            View Case Study
+          </Link>
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-700 transition-colors"
+          >
           <svg
             className="w-5 h-5"
             fill="currentColor"
@@ -65,8 +78,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               clipRule="evenodd"
             />
           </svg>
-          View on GitHub
-        </a>
+            View on GitHub
+          </a>
+        </div>
       </div>
     </article>
   );
