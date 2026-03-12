@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
 import AnimatedSection from "@/components/AnimatedSection";
 
 /**
@@ -22,15 +23,7 @@ export default function Home() {
           <p className="text-slate-600">Content coming soon.</p>
         </AnimatedSection>
       </section>
-      <section
-        id="contact"
-        className="min-h-[50vh] flex items-center justify-center px-6 py-20 bg-slate-50"
-      >
-        <AnimatedSection className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Contact</h2>
-          <p className="text-slate-600">Content coming soon.</p>
-        </AnimatedSection>
-      </section>
+      <Contact />
     </main>
   );
 }
