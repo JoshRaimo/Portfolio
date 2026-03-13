@@ -6,3 +6,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Smooth theme transitions */
+html {
+  color-scheme: light dark;
+}

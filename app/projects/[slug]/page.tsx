@@ -40,12 +40,12 @@ export default async function ProjectPage({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen pb-20">
+    <main className="min-h-screen pb-20 bg-slate-50 dark:bg-slate-900">
       {/* Back link */}
       <div className="max-w-3xl mx-auto px-6 pt-8">
         <Link
           href="/#projects"
-          className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 transition-colors"
+          className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
         >
           <svg
             className="w-5 h-5"
@@ -66,7 +66,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
       <article className="max-w-3xl mx-auto px-6 pt-8">
         {/* Hero image */}
-        <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-200 mb-10">
+        <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-700 mb-10">
           <Image
             src={project.image}
             alt={`${project.title} - Project overview`}
@@ -77,7 +77,7 @@ export default async function ProjectPage({ params }: PageProps) {
         </div>
 
         {/* Project title */}
-        <h1 className="text-4xl font-bold text-slate-900 mb-2">
+        <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-100 mb-2">
           {project.title}
         </h1>
 
@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }: PageProps) {
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 text-sm font-medium rounded-lg bg-slate-100 text-slate-700"
+              className="px-3 py-1 text-sm font-medium rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
             >
               {tech}
             </span>
@@ -95,7 +95,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
         {/* Overview */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold text-slate-900 mb-3">
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
             Overview
           </h2>
           <p className="text-slate-600 leading-relaxed">
@@ -105,7 +105,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
         {/* Problem statement */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold text-slate-900 mb-3">
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
             Problem Statement
           </h2>
           <p className="text-slate-600 leading-relaxed">
@@ -115,10 +115,10 @@ export default async function ProjectPage({ params }: PageProps) {
 
         {/* Technologies used */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold text-slate-900 mb-3">
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
             Technologies Used
           </h2>
-          <ul className="list-disc list-inside text-slate-600 space-y-1">
+          <ul className="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-1">
             {project.technologies.map((tech) => (
               <li key={tech}>{tech}</li>
             ))}
@@ -127,7 +127,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
         {/* Architecture */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold text-slate-900 mb-3">
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
             Architecture
           </h2>
           <p className="text-slate-600 leading-relaxed">
@@ -137,10 +137,10 @@ export default async function ProjectPage({ params }: PageProps) {
 
         {/* Challenges faced */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold text-slate-900 mb-3">
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
             Challenges Faced
           </h2>
-          <ul className="list-disc list-inside text-slate-600 space-y-2">
+          <ul className="list-disc list-inside text-slate-600 dark:text-slate-400 space-y-2">
             {project.challenges.map((challenge) => (
               <li key={challenge}>{challenge}</li>
             ))}
@@ -156,7 +156,7 @@ export default async function ProjectPage({ params }: PageProps) {
             {project.screenshots.map((src, index) => (
               <div
                 key={index}
-                className="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-200"
+                className="relative w-full aspect-video rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-700"
               >
                 <Image
                   src={src}
@@ -176,7 +176,7 @@ export default async function ProjectPage({ params }: PageProps) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-700 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-medium rounded-lg hover:bg-slate-700 dark:hover:bg-slate-300 transition-colors"
           >
             <svg
               className="w-5 h-5"

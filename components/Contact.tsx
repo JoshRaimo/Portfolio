@@ -70,14 +70,14 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="px-6 py-20 bg-slate-50"
+      className="px-6 py-20 bg-slate-50 dark:bg-slate-800/50"
     >
       <div className="max-w-2xl mx-auto">
         <AnimatedSection>
-          <h2 className="text-3xl font-bold text-slate-900 mb-2 text-center">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2 text-center">
             Contact
           </h2>
-          <p className="text-slate-600 text-center mb-12">
+          <p className="text-slate-600 dark:text-slate-400 text-center mb-12">
             Get in touch — I&apos;d love to hear from you.
           </p>
         </AnimatedSection>
@@ -87,18 +87,18 @@ export default function Contact() {
             {/* Contact info & links */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
                   Email
                 </h3>
                 <a
                   href={`mailto:${EMAIL}`}
-                  className="text-slate-900 hover:text-slate-600 transition-colors"
+                  className="text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-400 transition-colors"
                 >
                   {EMAIL}
                 </a>
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">
+                <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">
                   Links
                 </h3>
                 <div className="flex flex-col gap-2">
@@ -106,7 +106,7 @@ export default function Contact() {
                     href={GITHUB_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-900 hover:text-slate-600 transition-colors"
+                    className="text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-400 transition-colors"
                   >
                     GitHub
                   </a>
@@ -114,7 +114,7 @@ export default function Contact() {
                     href={LINKEDIN_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-900 hover:text-slate-600 transition-colors"
+                    className="text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-400 transition-colors"
                   >
                     LinkedIn
                   </a>
@@ -125,7 +125,7 @@ export default function Contact() {
             {/* Contact form */}
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="contact-name" className="block text-sm font-medium text-slate-700 mb-1">
+                <label htmlFor="contact-name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
                   Name
                 </label>
                 <input
@@ -133,8 +133,8 @@ export default function Contact() {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className={`w-full px-4 py-2 rounded-lg border bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent ${
-                    errors.name ? "border-red-500" : "border-slate-200"
+                  className={`w-full px-4 py-2 rounded-lg border bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-slate-100 focus:border-transparent ${
+                    errors.name ? "border-red-500" : "border-slate-200 dark:border-slate-600"
                   }`}
                   placeholder="Your name"
                   autoComplete="name"
@@ -144,7 +144,7 @@ export default function Contact() {
                 )}
               </div>
               <div>
-                <label htmlFor="contact-email" className="block text-sm font-medium text-slate-700 mb-1">
+                <label htmlFor="contact-email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
                   Email
                 </label>
                 <input
@@ -152,8 +152,8 @@ export default function Contact() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className={`w-full px-4 py-2 rounded-lg border bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent ${
-                    errors.email ? "border-red-500" : "border-slate-200"
+                  className={`w-full px-4 py-2 rounded-lg border bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-slate-100 focus:border-transparent ${
+                    errors.email ? "border-red-500" : "border-slate-200 dark:border-slate-600"
                   }`}
                   placeholder="your@email.com"
                   autoComplete="email"
@@ -163,7 +163,7 @@ export default function Contact() {
                 )}
               </div>
               <div>
-                <label htmlFor="contact-message" className="block text-sm font-medium text-slate-700 mb-1">
+                <label htmlFor="contact-message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
                   Message
                 </label>
                 <textarea
@@ -171,8 +171,8 @@ export default function Contact() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows={4}
-                  className={`w-full px-4 py-2 rounded-lg border bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent resize-none ${
-                    errors.message ? "border-red-500" : "border-slate-200"
+                  className={`w-full px-4 py-2 rounded-lg border bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-slate-100 focus:border-transparent resize-none ${
+                    errors.message ? "border-red-500" : "border-slate-200 dark:border-slate-600"
                   }`}
                   placeholder="Your message..."
                 />
@@ -182,7 +182,7 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+                className="w-full px-6 py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-medium rounded-lg hover:bg-slate-700 dark:hover:bg-slate-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-slate-100 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
               >
                 Send Message
               </button>

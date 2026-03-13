@@ -27,15 +27,15 @@ export default function About() {
   return (
     <section
       id="about"
-      className="px-6 py-20 bg-white border-t border-slate-200"
+      className="px-6 py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700"
     >
       <div className="max-w-5xl mx-auto">
         <AnimatedSection>
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-8 text-center">
             About
           </h2>
 
-          <p className="text-slate-600 text-lg leading-relaxed text-center max-w-3xl mx-auto mb-16">
+          <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed text-center max-w-3xl mx-auto mb-16">
             I have 4+ years of experience with hands-on full-stack development through
             academic and capstone projects. I build and deploy web applications using
             modern JavaScript frameworks, RESTful APIs, databases, and cloud services.
@@ -48,16 +48,16 @@ export default function About() {
             {skillCategories.map((category) => (
               <div
                 key={category.title}
-                className="rounded-xl border border-slate-200 bg-slate-50/50 p-6 hover:border-slate-300 hover:shadow-sm transition-all duration-200"
+                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50 p-6 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-sm transition-all duration-200"
               >
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-3">
                   {category.title}
                 </h3>
                 <ul className="space-y-2">
                   {category.skills.map((skill) => (
                     <li
                       key={skill}
-                      className="text-slate-600 text-sm"
+                      className="text-slate-600 dark:text-slate-400 text-sm"
                     >
                       • {skill}
                     </li>

@@ -16,11 +16,11 @@ export default function Home() {
       <Projects />
       <section
         id="skills"
-        className="min-h-[50vh] flex items-center justify-center px-6 py-20 bg-white border-t border-slate-200"
+        className="min-h-[50vh] flex items-center justify-center px-6 py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700"
       >
         <AnimatedSection className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Skills</h2>
-          <p className="text-slate-600">Content coming soon.</p>
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">Skills</h2>
+          <p className="text-slate-600 dark:text-slate-400">Content coming soon.</p>
         </AnimatedSection>
       </section>
       <Contact />

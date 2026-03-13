@@ -19,15 +19,15 @@ export default function Hero() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         {/* Greeting */}
-        <p className="text-lg text-slate-600 mb-2">Hi, I&apos;m</p>
+        <p className="text-lg text-slate-600 dark:text-slate-400 mb-2">Hi, I&apos;m</p>
 
         {/* Name */}
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-2">
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-2">
           Josh Raimo
         </h1>
 
         {/* Role */}
-        <p className="text-xl md:text-2xl text-slate-600 mb-10">
+        <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-10">
           Software Engineer
         </p>
 
@@ -37,7 +37,7 @@ export default function Hero() {
             href="https://github.com/joshraimo"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-700 transition-colors"
+            className="px-6 py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-medium rounded-lg hover:bg-slate-700 dark:hover:bg-slate-300 transition-colors"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -47,7 +47,7 @@ export default function Hero() {
             href="https://linkedin.com/in/joshraimo"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-slate-700 transition-colors"
+            className="px-6 py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-medium rounded-lg hover:bg-slate-700 dark:hover:bg-slate-300 transition-colors"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
