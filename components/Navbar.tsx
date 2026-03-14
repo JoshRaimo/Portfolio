@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import ThemeToggle from "@/components/ThemeToggle";
 
 /**
  * Navbar - Sticky header with responsive hamburger menu.
  * Smooth scrolls to sections via anchor links.
  */
 const navLinks = [
-  { label: "Home", href: "#hero" },
+  { label: "Home", href: "#top" },
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
@@ -19,17 +18,13 @@ const navLinks = [
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
-  };
-
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-sm border-b border-white/10">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo / Name */}
         <a
-          href="#hero"
-          className="text-xl font-bold text-slate-900 dark:text-slate-100 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+          href="#top"
+          className="text-xl font-bold text-slate-100 hover:text-slate-300 transition-colors"
         >
           Josh Raimo
         </a>
@@ -41,7 +36,7 @@ export default function Navbar() {
             <motion.a
               key={link.href}
               href={link.href}
-              className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+              className="text-slate-400 hover:text-slate-100 transition-colors"
               whileHover={{ y: -1 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -50,14 +45,12 @@ export default function Navbar() {
           ))}
         </div>
 
-        <ThemeToggle />
-
         {/* Hamburger button - visible on mobile only */}
         <motion.button
           type="button"
           aria-label="Toggle menu"
           aria-expanded={isMenuOpen}
-          className="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+          className="md:hidden p-2 rounded-lg text-slate-400 hover:bg-white/10 hover:text-slate-100 transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           whileTap={{ scale: 0.95 }}
         >
@@ -95,13 +88,13 @@ export default function Navbar() {
         }`}
         aria-hidden={!isMenuOpen}
       >
-        <div className="px-6 pb-4 pt-2 flex flex-col gap-2 border-t border-slate-100 dark:border-slate-700">
+        <div className="px-6 pb-4 pt-2 flex flex-col gap-2 border-t border-white/10">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              onClick={handleLinkClick}
-              className="py-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg px-3 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+              className="py-2 text-slate-400 hover:text-slate-100 hover:bg-white/10 rounded-lg px-3 transition-colors"
             >
               {link.label}
             </a>
