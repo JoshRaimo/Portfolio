@@ -13,6 +13,7 @@ export interface Project {
   screenshots: string[];
   githubUrl: string;
   image: string;
+  imagePosition?: string;
 }
 
 export const projects: Project[] = [
@@ -40,7 +41,8 @@ export const projects: Project[] = [
       "https://placehold.co/800x450/1e293b/94a3b8?text=Booking+Flow",
     ],
     githubUrl: "https://github.com/JoshRaimo/rent-a-ride",
-    image: "https://placehold.co/600x340/1e293b/94a3b8?text=Rent-a-Ride",
+    image: "/rent-a-ride.png",
+    imagePosition: "25% center",
   },
   {
     slug: "ssusocial",
@@ -66,7 +68,8 @@ export const projects: Project[] = [
       "https://placehold.co/800x450/1e293b/94a3b8?text=Content+Sharing",
     ],
     githubUrl: "https://github.com/JoshRaimo/ssusocial",
-    image: "https://placehold.co/600x340/1e293b/94a3b8?text=SSUSocial",
+    image: "/ssusocial.png",
+    imagePosition: "75% center",
   },
 ];
 
