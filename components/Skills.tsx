@@ -26,7 +26,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="px-6 py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700"
+      className="px-6 py-20"
     >
       <div className="max-w-5xl mx-auto">
         <AnimatedSection>

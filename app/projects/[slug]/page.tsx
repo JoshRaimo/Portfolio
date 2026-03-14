@@ -40,7 +40,7 @@ export default async function ProjectPage({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen pb-20 bg-slate-50 dark:bg-slate-900">
+    <main className="min-h-screen pb-20">
       {/* Back link */}
       <div className="max-w-3xl mx-auto px-6 pt-8">
         <Link

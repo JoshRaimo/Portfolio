@@ -70,7 +70,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="px-6 py-20 bg-slate-50 dark:bg-slate-800/50"
+      className="px-6 py-20"
     >
       <div className="max-w-2xl mx-auto">
         <AnimatedSection>

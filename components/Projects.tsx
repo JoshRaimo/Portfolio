@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="px-6 py-20 bg-slate-50 dark:bg-slate-800/50"
+      className="px-6 py-20"
     >
       <div className="max-w-6xl mx-auto">
         <AnimatedSection>
