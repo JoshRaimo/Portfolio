@@ -10,10 +10,10 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-12"
+      className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-12 relative"
     >
       <motion.div
-        className="max-w-2xl mx-auto text-center"
+        className="max-w-2xl mx-auto text-center flex-1 flex flex-col justify-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -55,6 +55,39 @@ export default function Hero() {
           </motion.a>
         </div>
       </motion.div>
+
+      {/* Scroll-down arrow */}
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+        <motion.a
+          href="#about"
+          className="text-slate-400 hover:text-slate-200 transition-colors inline-flex"
+          aria-label="Scroll to About"
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: [0.4, 1, 0.4],
+            y: [0, 6, 0],
+          }}
+          transition={{
+            opacity: { duration: 1.5, repeat: Infinity, ease: "easeInOut" },
+            y: { duration: 1.5, repeat: Infinity, ease: "easeInOut" },
+          }}
+        >
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </motion.a>
+      </div>
     </section>
   );
 }
