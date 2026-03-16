@@ -18,7 +18,24 @@ export default function Particles() {
   const options = useMemo<ISourceOptions>(() => ({
     detectRetina: true,
     fpsLimit: 120,
-    interactivity: { detectOn: "canvas", events: {}, modes: {} },
+    interactivity: {
+      detectOn: "window",
+      events: {
+        onHover: {
+          enable: true,
+          mode: "repulse",
+        },
+      },
+      modes: {
+        repulse: {
+          distance: 120,
+          duration: 0.4,
+          factor: 30,
+          speed: 0.5,
+          maxSpeed: 20,
+        },
+      },
+    },
     particles: {
       number: { value: 200 },
       color: { value: "#FFFFFF" },
